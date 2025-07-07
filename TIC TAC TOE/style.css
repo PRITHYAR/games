@@ -1,0 +1,99 @@
+*{
+    margin:0;
+    padding:0;
+}
+body{
+    background-color:#2e8165;
+    
+}
+.container{
+    height:70vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.game{
+    height:60vmin;
+    width:60vmin;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    align-items:center;
+    gap:2vmin;
+}
+.box{
+    height:18vmin;
+    width:18vmin;
+    border-radius: 1rem;
+    border:none;
+    font-size:8vmin;
+    color:rgb(39, 25, 6);
+    background-color:blanchedalmond;
+
+}
+
+#reset-btn{
+    padding:1rem;
+    font-size:1.25rem;
+    background-color: black;
+    color:white;
+    border-radius:1rem;
+    border:none;
+    margin-top: 95vmin;
+    align-items:center;
+
+}
+#msg{
+    color:yellow;
+    font-size:5vmin;
+
+}
+
+.msg-container{
+    height:100vmin;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    gap:2vmin;
+}
+.hide{
+    display:none;
+}
+
+
+
+/* Add this to your CSS */
+.cell.strike {
+    position: relative;
+    background-color: #f0f0f0;
+}
+
+.cell.strike::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: yellow;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.cell.strike.horizontal::before {
+    transform: translateY(-50%) rotate(0deg); /* Horizontal line */
+}
+
+.cell.strike.vertical::before {
+    transform: translateY(-50%) rotate(90deg); /* Vertical line */
+}
+
+.cell.strike.diagonal1::before {
+    transform: translateY(-50%) rotate(45deg); /* Diagonal from top-left to bottom-right */
+}
+
+.cell.strike.diagonal2::before {
+    transform: translateY(-50%) rotate(-45deg); /* Diagonal from top-right to bottom-left */
+}
